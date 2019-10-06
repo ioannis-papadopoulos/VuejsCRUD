@@ -4,8 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                nodejs(nodejs: 'Node 12.x') 
+                  nodejs(nodeJSInstallationName: 'nodejs') {
                     sh 'npm config ls'
+                }
                 echo 'Building..'
             }
         }
